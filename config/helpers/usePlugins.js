@@ -1,9 +1,12 @@
-// plugins
+// plugins imports
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+// exported function
 exports.usePlugins = (e) => {
-	const pluginsSet = {
+
+	// accessible configuration panel
+	const pluginsPanel = {
 		development: 'html',
 		production: 'html clean',
 		values: {
@@ -14,14 +17,16 @@ exports.usePlugins = (e) => {
 		},
 	};
 
-	const plugins = pluginsSet[e.toString()];
-	const arr = plugins.split(' ');
+	// business logic
 	let message = '[plugins]: ';
 	let error = '';
 
+	const plugins = pluginsPanel[e.toString()];
+	const arr = plugins.split(' ');
+
 	const outcome = arr
 		.map((plugin) => {
-			const p = pluginsSet.values[plugin];
+			const p = pluginsPanel.values[plugin];
 			if (!p) {
 				error += plugin + ' ';
 				return;

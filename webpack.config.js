@@ -1,6 +1,5 @@
 const path = require('path');
 
-// parts
 const h = require('./config/helpers');
 
 module.exports = (env) => ({

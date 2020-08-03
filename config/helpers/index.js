@@ -1,9 +1,9 @@
 const { usePlugins } = require('./usePlugins');
-const { useFilename } = require('./useFilename')
-const { useDevServer } = require('./useDevServer')
+const { useFilename } = require('./useFilename');
+const { useDevServer } = require('./useDevServer');
 
 module.exports = {
-   useFilename,
+	useFilename,
 	usePlugins,
-   useDevServer
+	useDevServer,
 };
