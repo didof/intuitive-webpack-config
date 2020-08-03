@@ -2,7 +2,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-exports.usePluginsSet = (e) => {
+exports.usePlugins = (e) => {
 	const pluginsSet = {
 		development: 'html',
 		production: 'html clean',

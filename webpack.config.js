@@ -1,8 +1,7 @@
 const path = require('path');
 
 // parts
-const parts = require('./config/webpack.parts');
-const h = require('./config/helpers')
+const h = require('./config/helpers');
 
 module.exports = (env) => ({
 	entry: {
@@ -10,8 +9,8 @@ module.exports = (env) => ({
 	},
 	output: {
 		path: path.join(__dirname, 'dist'),
-		filename: env === 'development' ? '[name].js' : '[name].[hash].js',
+		filename: h.useFilename(env),
 	},
-	plugins: h.usePluginsSet(env),
-	devServer: env === 'development' ? parts.devServer() : {},
+	plugins: h.usePlugins(env),
+	devServer: h.useDevServer(env),
 });
